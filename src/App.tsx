@@ -1,18 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import {Layout} from "./Layouts/Layout";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Frunza Dumitru CR-193
-        </p>
-      </header>
-    </div>
-  );
+    return (
+        <Layout/>
+    );
 }
 
 export default App;
