@@ -2,30 +2,12 @@ import {Box, Button, colors, IconButton, Menu, MenuItem, Toolbar, Typography} fr
 import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
 import React from "react";
+import {cards} from "../Variables/Cards";
 
 
 const pages = ['Lab_1', 'Lab_2', 'Lab_3'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 export const Header = () => {
-
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-    const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
-
-    const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElUser(event.currentTarget);
-    };
-
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
-
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
 
     return (
         <Toolbar disableGutters>
@@ -35,21 +17,22 @@ export const Header = () => {
                     aria-label="account of current user"
                     aria-controls="menu-appbar"
                     aria-haspopup="true"
-                    onClick={handleOpenNavMenu}
+                    onClick={()=> {return true}}
                     color="error"
                 >
                     <MenuIcon />
                 </IconButton>
             </Box>
             <Box>
-                <IconButton color="error" >
+                <IconButton color="error" size={"large"}>
                     <HomeIcon/>
                 </IconButton>
                 {pages.map((page) => (
-                    <Button color="error" >
+                    <Button color="error" size={"large"} >
                         {page}
                     </Button>
                 ))}
+
             </Box>
         </Toolbar>
     )
