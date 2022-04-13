@@ -1,13 +1,8 @@
 import {Box} from "@mui/material";
 import MyCard from "../MyCard/MyCard";
-import {number, string} from "mobx-state-tree/dist/types/primitives";
 import NewMyCard from "../NewMyCard/NewMyCard";
+import {Card} from "../Content/Content";
 
-interface Card {
-    title: string,
-    id: number,
-    description: string
-}
 
 const CardList = ({cards}: { cards: Card[] }) => {
 
@@ -22,9 +17,7 @@ const CardList = ({cards}: { cards: Card[] }) => {
             alignContent: "flex-start"
         }}>
             <NewMyCard key={0}  id={0} title={""} description={""} />
-            {cards.map((card) => (
-                <MyCard key={card.id}  id={card.id} title={card.title} description={card.description} />
-            ))}
+            <MyCard key={1}  id={0} title={"qwe"} description={"qwe"} status={0} />
         </Box>
     )
 }

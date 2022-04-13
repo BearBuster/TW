@@ -2,11 +2,14 @@ import {Box, Button, Card, CardActions, CardContent, Checkbox, IconButton, Typog
 import EditIcon from '@mui/icons-material/Edit';
 import CloseIcon from '@mui/icons-material/Close';
 import {blueGrey, orange, red} from "@mui/material/colors";
-import {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "../../redux";
 
 
-const MyCard = ({title, id, description}: { title: string, id: number, description: string }) => {
-    const [editEnable, setEditEnable] = useState(false);
+const MyCard = ({title = '', id = 0, description = '', status = 0}: { title: string, id: number, description: string, status: number }) => {
+    const card = useSelector((state: RootState) => state.card)
+    const dispatch = useDispatch()
+
     return(
         <Card sx={{
             width: "300px",
@@ -15,24 +18,24 @@ const MyCard = ({title, id, description}: { title: string, id: number, descripti
             boxShadow: `0px 5px 10px 1px;`,
         }}
         >
-            <CardActions disableSpacing sx={{"display": (editEnable? "" : "none") }}>
+            <CardActions disableSpacing sx={{display: "none" }}>
                 <IconButton>
                     <CloseIcon color={"secondary"} />
                 </IconButton>
             </CardActions>
             <CardContent>
                 <Typography sx={{textDecoration: 'underline', fontWeight: "bold" }} variant={"h6"} textAlign="center" color={"secondary"}>
-                    {title}
+                    {card.title}
                 </Typography>
                 <Typography variant={"subtitle1"}  color={"primary.light"} textAlign="center">
-                    {description}
+                    {card.description}
                 </Typography>
 
             </CardContent>
             <CardActions disableSpacing>
 
                 <Box sx={{flexGrow: 1}}>
-                    <IconButton aria-label="Remove from List" onClick={() => setEditEnable(!editEnable)}>
+                    <IconButton aria-label="Remove from List" >
                         <EditIcon color={"secondary"}></EditIcon>
                     </IconButton>
                 </Box>
