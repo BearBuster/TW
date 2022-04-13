@@ -1,0 +1,11 @@
+export const LOGIN = "Login"
+export const LOGOUT = "LogOut"
+export const REGISTER = "Register"
+export const HOME_NAVIGATOR = "Goods Deliverly"
+export const SETTINGS = 'Settings'
+export const AUTHNAVIGATOR = 'AuthNavigator'
+export const NOTIFICATIONS = 'notifications'
+export const ADD_NEW_PACKAGE = 'Add New Package'
+export const TRACKING_LIST = 'Tracking List'
+export const TRACK_INFO = 'Track Info'
+export const ADD_NEW_TRACK = 'Add New Track'
